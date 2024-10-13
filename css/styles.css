@@ -804,7 +804,7 @@ p {
     align-items: center;
     backdrop-filter: blur(1vh);
     background-color: #040f1300;
-    background-image: url("images/twitch.png");
+    background-image: url("../images/twitch.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -1808,7 +1808,7 @@ and (orientation: landscape) {
         background-color: rgba(53, 31, 0, 0.288); /* Kept only one background-color */
         overflow: hidden;
         display: flex;
-        background-image: url("images/twitch.png");
+        background-image: url("../images/twitch.png");
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -2053,7 +2053,7 @@ and (orientation: landscape) {
         background-color: rgba(53, 31, 0, 0.288);
         overflow: hidden;
         display: flex;
-        background-image: url("images/twitch.png");
+        background-image: url("../images/twitch.png");
         background-color: #040f1300;
         background-size: cover;
         background-position: center;
