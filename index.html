@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
 
 <head>
     <meta content="text/html; charset=utf-8" http-equiv="content-type">
@@ -9,12 +9,10 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Konfetti Test</title>
 
 
     <!-- CSS Files -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-
     <link href="css/bootstrap.min.css" media="screen" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="fonts/icon-7-stroke/css/pe-icon-7-stroke.css" rel="stylesheet">
@@ -199,9 +197,10 @@
             </div>
             <div class="collapse navbar-collapse navbar-themers navbar-right" id="navbar-scroll">
                 <ul class="nav navbar-nav">
-                    <li><a href="#feature">Über uns</a></li>
-                    <li><a href="#B2">Kategorien</a></li>
+                    <li><a href="#Home">Home</a></li>
                     <li><a href="#Phase">Einsenden</a></li>
+                    <li><a href="#B2">Kategorien</a></li>
+                    <li><a href="#feature">Über uns</a></li>
                     <li>
                         <a id="gewinner-link">Gewinner</a>
                         <img alt="Trophy" id="trophy-image" src="images/lock.png" style="display: none;">
@@ -234,14 +233,13 @@
     <div class="light light11"></div>
 </div>
 
-<div class="overlay">
+<div class="overlay" id="Home">
     <div class="container">
         <div class="row">
 
 
             <div class="Landing-Con">
                 <div class="Landing-content">
-                    </p>
 
                     <h1 class="wow fadeInLeft">
                         DIE SMALL STREAM AWARDS <span class="number" id="confetti-trigger">2024</span>
@@ -263,10 +261,10 @@
             <!-- /.header button -->
             <div class="head-btn wow fadeInLeft">
                 <a class="btn-primary app-store" href="#Phase">
-                    <i class="fa solid fa-fire"></i></i> <span> Nominieren</span>
+                    <i class="fa solid fa-fire"></i> <span> Nominieren</span>
                 </a>
                 <a class="btn-primary play-market" href="#B2">
-                    <i class="fa solid fa-clipboard"></i></i> <span> Kategorien</span>
+                    <i class="fa solid fa-clipboard"></i> <span> Kategorien</span>
                 </a>
             </div>
 
@@ -276,7 +274,6 @@
             </div>
         </div>
     </div>
-</div>
 </div>
 <!-- <div class="phase nope"> für beendete Phasen -->
 <section id="Phase"></section>
@@ -343,8 +340,6 @@
         </div>
     </div>
 </div>
-</div>
-</section>
 <section id="Kategorie">
     <div class="title-container">
         Preiskategorien
@@ -705,7 +700,7 @@
 // Close the popup when clicking outside the content
         window.addEventListener('click', function (event) {
             const modal = document.getElementById('loginPopup');
-            if (event.target == modal) {
+            if (event.target === modal) {
                 modal.style.display = 'none';
             }
         });
