@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <!-- /.website title -->
+    <title>Small Stream Awards</title>
+
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Konfetti Test</title>
+
+
+    <!-- CSS Files -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <link href="css/bootstrap.min.css" media="screen" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="fonts/icon-7-stroke/css/pe-icon-7-stroke.css" rel="stylesheet">
+    <link href="css/animate.css" media="screen" rel="stylesheet">
+    <link href="css/owl.theme.css" rel="stylesheet">
+    <link href="css/owl.carousel.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+
+    <link href="css/styles.css" media="screen" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Alegreya+Sans:100,300,400,700' rel='stylesheet' type='text/css'>
+
+
+    <!-- Font Awesome -->
+    <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">  -->
+
+    <style>
+        button {
+            font-size: 1.5rem;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin: 20px;
+        }
+
+        /* Popup container */
+        .login-popup {
+            display: none; /* Hidden by default */
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.7); /* Black background with opacity */
+        }
+
+        /* Login content */
+        .login-content {
+            background-color: #fff;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 400px;
+            position: relative;
+            text-align: center;
+        }
+
+        /* Close button */
+        .close-btn {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close-btn:hover, .close-btn:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Form styling */
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            text-align: left;
+            margin-bottom: 5px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* OAuth buttons */
+        .oauth-buttons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .oauth-btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 16px;
+            width: 48%;
+            background-color: #9146FF; /* Default color for Twitch */
+            color: white;
+            font-size: 14px;
+            border-radius: 5px;
+            text-decoration: none;
+            justify-content: center;
+            transition: background-color 0.3s;
+        }
+
+        .oauth-btn img {
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+        }
+
+        .oauth-btn.twitch-login-btn {
+            background-color: #9146FF; /* Twitch purple */
+        }
+
+        .oauth-btn.discord-login-btn {
+            background-color: #7289DA; /* Discord blue */
+        }
+
+        .oauth-btn:hover {
+            opacity: 0.8;
+        }
+        /* Style for the Login link to look like a button */
+        .login-btn {
+            display: inline-block;
+            padding: 5px 10px;
+            background-color: #FFA500; /* Orange-yellow color */
+            color: black;
+            border-radius: 25px; /* Rounded corners */
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none; /* Remove underline */
+            transition: background-color 0.15s ease;
+            border: 2px solid transparent;
+        }
+
+        .login-btn:hover {
+            background-color: #FFCC00; /* Slightly darker yellow for hover effect */
+            border-color: black; /* Optional black border on hover */
+            color: black; /* Keep the text color black */
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+
+<body data-spy="scroll" data-target="#navbar-scroll">
+
+<div id="top"></div>
+
+<!-- NAVIGATION -->
+<div id="menu">
+    <nav class="navbar-wrapper navbar-default" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle" data-target=".navbar-themers" data-toggle="collapse" type="button">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand site-name" href="#top"><img alt="logo" src="images/logo.png"></a>
+            </div>
+            <div class="collapse navbar-collapse navbar-themers navbar-right" id="navbar-scroll">
+                <ul class="nav navbar-nav">
+                    <li><a href="#feature">Über uns</a></li>
+                    <li><a href="#B2">Kategorien</a></li>
+                    <li><a href="#Phase">Einsenden</a></li>
+                    <li>
+                        <a id="gewinner-link">Gewinner</a>
+                        <img alt="Trophy" id="trophy-image" src="images/lock.png" style="display: none;">
+                    </li>
+                    <li>
+                        <!-- Login button styled as requested -->
+                        <a id="openLoginPopup" class="login-btn">
+                            Login
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+
+
+
+<!-- /.parallax full screen background image -->
+<div class="bg">
+    <div class="light light1"></div>
+    <div class="light light2"></div>
+    <div class="light light3"></div>
+    <div class="light light4"></div>
+    <div class="light light5"></div>
+    <div class="light light6"></div>
+    <div class="light light7"></div>
+    <div class="light light8"></div>
+    <div class="light light9"></div>
+    <div class="light light10"></div>
+    <div class="light light11"></div>
+</div>
+
+<div class="overlay">
+    <div class="container">
+        <div class="row">
+
+
+            <div class="Landing-Con">
+                <div class="Landing-content">
+                    </p>
+
+                    <h1 class="wow fadeInLeft">
+                        DIE SMALL STREAM AWARDS <span class="number" id="confetti-trigger">2024</span>
+                    </h1>
+
+
+                    <!-- /.header paragraph -->
+                    <div class="landing-text wow fadeInLeft">
+                        <p>Ein Preis für alle kleinen Streamer da draußen. Denn großer Erfolg beginnt mit kleinen
+                            Schritten, und eure Leidenschaft verdient es, gefeiert zu werden. </p>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- /.main title -->
+
+
+            <!-- /.header button -->
+            <div class="head-btn wow fadeInLeft">
+                <a class="btn-primary app-store" href="#Phase">
+                    <i class="fa solid fa-fire"></i></i> <span> Nominieren</span>
+                </a>
+                <a class="btn-primary play-market" href="#B2">
+                    <i class="fa solid fa-clipboard"></i></i> <span> Kategorien</span>
+                </a>
+            </div>
+
+
+            <div class="col-md-6">
+                <img alt="phone" class="chati img-responsive wow fadeInRight" src="images/chati.webp">
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!-- <div class="phase nope"> für beendete Phasen -->
+<section id="Phase"></section>
+<!-- /.feature section -->
+<div class="project-section">
+    <h2>Projektphasen</h2>
+    <div class="project-phases">
+        <a class="phase-container" href="#Phase">
+            <div class="phase active">
+                <h4>Vorbereitung</h4>
+                <!-- <i class="icon fas fa-lightbulb"></i> -->
+                <span>Phase 1</span>
+            </div>
+            <div class="arrow"></div>
+        </a>
+        <a class="phase-container" href="#Phase">
+            <div class="phase">
+                <h4>Clip Einsendung</h4>
+                <!-- <i class="icon fas fa-tasks"></i> -->
+                <span>Phase 2
+					</span>
+            </div>
+            <div class="arrow"></div>
+        </a>
+        <a class="phase-container" href="#Phase">
+            <div class="phase">
+                <h4>Voting</h4>
+                <!-- <i class="icon fas fa-chart-line"></i> -->
+                <span>Phase 3</span>
+            </div>
+            <div class="arrow"></div>
+        </a>
+        <a class="phase-container" href="#Phase">
+            <div class="phase">
+                <h4>Auswertung</h4>
+                <!-- <i class="icon fas fa-cogs"></i> -->
+                <span>Phase 4</span>
+            </div>
+            <div class="arrow"></div>
+        </a>
+        <a class="phase-container" href="#Phase">
+            <div class="phase">
+                <h4>Gewinner Enthüllung</h4>
+                <!-- <i class="icon fas fa-check-circle"></i> -->
+                <span>Phase 5</span>
+            </div>
+        </a>
+    </div>
+</div>
+
+<div class="phase-info-container">
+    <div class="phase-info">
+        <section id="B2"></section>
+        <div class="countdown">
+            <h2>Beginn der Clip Einsendungs Phase</h2>
+            <div id="timer">
+
+
+                <span id="days"></span> Tage
+                <span id="hours"></span> Stunden
+                <span id="minutes"></span> Minuten
+                <span id="seconds"></span> Sekunden
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</section>
+<section id="Kategorie">
+    <div class="title-container">
+        Preiskategorien
+    </div>
+    <div class="pricing-container">
+        <!-- Spitze des Pfeils -->
+        <div class="pricing-box" style="--x: 45%; --y: 5%; --delay: 0s;">
+            <h3>Funny Moment</h3>
+            <p class="info-text">Egal, ob es eine unerwartete Pointe oder ein klassischer Fail ist, hier werden die
+                besten Lacher garantiert</p>
+        </div>
+
+        <!-- Zweite Reihe, linke Seite -->
+        <div class="pricing-box" style="--x: 30%; --y: 25%; --delay: 0.2s;">
+            <h3>Best Rage Moment</h3>
+            <p class="info-text">Ragequits, zerbrochene Controller oder wütende Schreie – diese Momente zeigen den
+                Gaming-Alltag von seiner impulsivsten Seite.</p>
+        </div>
+
+        <!-- Zweite Reihe, rechte Seite -->
+        <div class="pricing-box" style="--x: 60%; --y: 25%; --delay: 0.4s;">
+            <h3>WTF Passiert Hier?!</h3>
+            <p class="info-text">Momente, die dich staunen lassen und bei denen du dich fragst: „Was zur Hölle
+                passiert hier gerade?!“. Unerwartete Wendungen und bizarre Situationen stehen hier im Mittelpunkt.
+            </p>
+        </div>
+
+        <!-- Dritte Reihe, linke Seite -->
+        <div class="pricing-box" style="--x: 15%; --y: 45%; --delay: 0.6s;">
+            <h3>Bester Lost Moment</h3>
+            <p class="info-text">Wenn die Orientierung komplett verloren geht und Planlosigkeit das Geschehen
+                bestimmt, entstehen diese „Lost“-Momente. Hier sehen wir die lustigsten und chaotischsten
+                Situationen.</p>
+        </div>
+
+        <!-- Dritte Reihe, rechte Seite -->
+        <div class="pricing-box" style="--x: 75%; --y: 45%; --delay: 0.8s;">
+            <h3>Bester Jumpscare</h3>
+            <p class="info-text">Der perfekte Schreckmoment! Ob Horror-Games oder unerwartete Schocks, hier erleben
+                wir die besten Reaktionen auf plötzliche Schrecksekunden.</p>
+        </div>
+    </div>
+</section>
+
+<div id="feature">
+    <div id="team-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1 col-sm-12 text-center team-title">
+                    <h2>Supporter</h2>
+                    <p>Lerne Streamer kennen, die das Event unterstützen.</p>
+                </div>
+            </div>
+            <div class="row row-team">
+                <div class="team-container">
+                    <div class="team-member">
+                        <a href="https://www.twitch.tv/w0nderwil">
+
+                            <img alt="Member 1"
+                                 src="https://static-cdn.jtvnw.net/jtv_user_pictures/c14e5f63-1b7e-42d2-aa1b-c61e701d57da-profile_image-70x70.png">
+                        </a>
+                        <h4>w0nderwil</h4>
+
+                    </div>
+                    <div class="team-member">
+                        <a href="https://www.twitch.tv/moglei">
+
+                            <img alt="Member 1"
+                                 src="https://static-cdn.jtvnw.net/jtv_user_pictures/0d5bcea1-d7f5-428d-8121-c39f2cec8f87-profile_image-70x70.png">
+                        </a>
+                        <h4>Moglei</h4>
+
+                    </div>
+                    <div class="team-member">
+                        <a href="https://www.twitch.tv/foxroyaI">
+
+                            <img alt="Member 1"
+                                 src="https://static-cdn.jtvnw.net/jtv_user_pictures/a56525a3-b56e-4789-83e5-b072a92e71ff-profile_image-70x70.png">
+                        </a>
+                        <h4>FoxRoyal</h4>
+
+                    </div>
+                    <div class="team-member">
+                        <a href="https://www.twitch.tv/lerokes">
+
+                            <img alt="Member 1"
+                                 src="https://static-cdn.jtvnw.net/jtv_user_pictures/ed2d0878-faf0-4ba8-aa77-16eaab0eaad8-profile_image-70x70.png">
+                        </a>
+                        <h4>Lerokes</h4>
+
+                    </div>
+                    <div class="team-member">
+                        <a href="https://www.twitch.tv/imaggeee">
+
+                            <img alt="Member 1"
+                                 src="https://static-cdn.jtvnw.net/jtv_user_pictures/fd4c1487-3090-4ac5-8e86-51b3338386bb-profile_image-70x70.png">
+                        </a>
+                        <h4>Imaggeee</h4>
+
+                    </div>
+                    <div class="team-member">
+                        <a href="https://www.twitch.tv/einfach_dee">
+
+                            <img alt="Member 1"
+                                 src="https://static-cdn.jtvnw.net/jtv_user_pictures/789e8411-287e-46e0-a127-d96d76a5ebc5-profile_image-70x70.png">
+                        </a>
+                        <h4>einfach_dee</h4>
+
+                    </div>
+                    <div class="team-member">
+                        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+
+                            <img alt="Member 1" src="images/no.png">
+                        </a>
+                        <h4>Trolololololol</h4>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1 col-sm-12 text-center team-title">
+                    <h2>Team</h2>
+                    <p>Lerne unser Team kennen, die vor oder auch Hinter den Kulissen mithelfen.</p>
+                </div>
+            </div>
+            <div class="row row-team">
+                <div class="team-container">
+                    <div class="team-member">
+                        <a href="https://www.twitch.tv/frittiertboy">
+
+                            <img alt="Member 1"
+                                 src="https://static-cdn.jtvnw.net/jtv_user_pictures/9079c28c-923a-41f4-a274-b54278879bff-profile_image-70x70.png">
+                        </a>
+                        <h4>Fritiertboy</h4>
+
+                    </div>
+                    <div class="team-member">
+                        <a href="https://www.twitch.tv/S4MARON">
+
+                            <img alt="Member 1"
+                                 src="https://cdn.7tv.app/user/6228d601c1125225d1887f1f/av_670441670212155ee9e5b24e/2x.webp">
+                        </a>
+                        <h4>S4MARON</h4>
+
+                    </div>
+                    <div class="team-member">
+                        <a href="">
+
+                            <img alt="Member 1" src="images/no.png">
+                        </a>
+                        <h4>Cpt. Kontrollauge</h4>
+
+                    </div>
+                    <div class="team-member">
+                        <a href="">
+
+                            <img alt="Member 1" src="images/no.png">
+                        </a>
+                        <h4>Herr GHG</h4>
+
+                    </div>
+                    <div class="team-member">
+                        <a href="">
+
+                            <img alt="Member 1"
+                                 src="https://static-cdn.jtvnw.net/jtv_user_pictures/f45e03ed-e548-4da7-b602-1f965d8e62f9-profile_image-70x70.png">
+                        </a>
+                        <h4>TheRealJackson</h4>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- <section id="features">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 wow fadeInRight animated" data-wow-delay=".8s" style="visibility: visible; animation-delay: 0.8s; -webkit-animation-delay: 0.8s; animation-name: fadeInRight; -webkit-animation-name: fadeInRight;">
+                <h2 class="title">Our Focused on Feature</h2>
+
+                <div class="feature-item">
+
+                    <div class="media">
+                        <div class="pull-left icon" href="#">
+                            <i class="fa fa-paint-brush"></i>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">Reliable and Secure Platform</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisici ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea com</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+
+                    <div class="media">
+                        <div class="pull-left icon" href="#">
+                            <i class="fa fa-rss"></i>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">Everything is perfectly orgainized</h4>
+                            <p>Aipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+
+                    <div class="media">
+                        <div class="pull-left icon" href="#">
+                            <i class="fa fa-recycle"></i>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">Rapid customer support</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6 wow fadeInLeft animated" data-wow-delay=".8s" style="visibility: visible; animation-delay: 0.8s; -webkit-animation-delay: 0.8s; animation-name: fadeInLeft; -webkit-animation-name: fadeInLeft;">
+                <div class="block">
+                    <img class="img-responsive" src="images/featured-app.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>  -->
+
+<!-- /.footer -->
+<footer id="footer">
+    <div class="container">
+        <div class="col-sm-4 col-sm-offset-4">
+            <!-- /.social links -->
+            <!-- <div class="social text-center">
+                <ul>
+                    <li><a class="wow fadeInUp" href="https://twitter.com/"><i class="fa fa-twitter"></i></a></li>
+                    <li><a class="wow fadeInUp" href="https://www.facebook.com/" data-wow-delay="0.2s"><i class="fa fa-facebook"></i></a></li>
+                    <li><a class="wow fadeInUp" href="https://plus.google.com/" data-wow-delay="0.4s"><i class="fa fa-google-plus"></i></a></li>
+                    <li><a class="wow fadeInUp" href="https://instagram.com/" data-wow-delay="0.6s"><i class="fa fa-instagram"></i></a></li>
+                </ul>
+            </div>	 -->
+            <div class="text-center wow fadeInUp" style="font-size: 14px;">Small Stream Award 2024 - All Rights
+                Reserved - <a href="javascript:void(0);" id="openImpressum">Impressum</a></div>
+            <a class="scrollToTop" href="#"><i class="fa fa-arrow-circle-o-up"></i></a>
+        </div>
+    </div>
+</footer>
+
+
+<!-- Popup Container for the Login/Registration -->
+<div class="login-popup" id="loginPopup">
+    <div class="login-content">
+        <span class="close-btn" id="closeLogin">&times;</span>
+        <h1>Login or Register</h1>
+
+        <!-- Login form -->
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="username">Username or Email:</label>
+                <input class="form-control" id="username" placeholder="Enter your username or email" required type="text">
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input class="form-control" id="password" placeholder="Enter your password" required type="password">
+            </div>
+
+            <button class="submit-btn" type="submit">Login</button>
+        </form>
+
+        <hr>
+
+        <!-- OAuth options -->
+        <p>Or login with:</p>
+        <div class="oauth-buttons">
+            <a class="oauth-btn twitch-login-btn" href="https://id.twitch.tv/oauth2/authorize?client_id=zzds8ws0st10vxfa3568snakvm31m1&redirect_uri=https://smallstreamawards.de&response_type=code&scope=user:read:email">
+                <img alt="Twitch Icon" class="oauth-icon" src="https://upload.wikimedia.org/wikipedia/commons/a/af/Twitch_Glitch_Logo_Purple.svg">
+                Login with Twitch
+            </a>
+
+            <a class="oauth-btn discord-login-btn" href="https://discord.com/api/oauth2/authorize?client_id=YOUR_DISCORD_CLIENT_ID&redirect_uri=https://smallstreamawards.de&response_type=code&scope=identify email">
+                <img alt="Discord Icon" class="oauth-icon" src="https://upload.wikimedia.org/wikipedia/commons/9/98/Discord_logo.svg">
+                Login with Discord
+            </a>
+        </div>
+    </div>
+</div>
+
+
+<div class="impressum-popup" id="impressumContainer">
+    <div class="impressum-content">
+        <span class="close-btn" id="closeImpressum">&times;</span>
+        <h1>Impressum</h1>
+        <p><strong>Informationen über den Diensteanbieter:</strong></p>
+        <p>Samuel Kaviedes</p>
+        <p><strong>E-Mail:</strong> <a href="mailto:contact@smallstreamawards.de">contact@smallstreamawards.de</a>
+        </p>
+
+        <h2>EU-Streitschlichtung</h2>
+        <p>
+            Gemäß der Verordnung über Online-Streitbeilegung in Verbraucherangelegenheiten (ODR-Verordnung) möchten
+            wir Sie über die
+            Online-Streitbeilegungsplattform (OS-Plattform) der Europäischen Kommission informieren.
+            Verbraucher können Beschwerden an die OS-Plattform unter <a href="https://ec.europa.eu/consumers/odr/"
+                                                                        target="_blank">https://ec.europa.eu/consumers/odr/</a> richten.
+        </p>
+        <p>
+            Wir möchten darauf hinweisen, dass wir nicht bereit oder verpflichtet sind, an Streitbeilegungsverfahren
+            vor einer
+            Verbraucherschlichtungsstelle teilzunehmen.
+        </p>
+
+        <h2>Bildernachweis</h2>
+        <p>Die Bilder, Fotos und Grafiken auf dieser Webseite sind urheberrechtlich geschützt.</p>
+        <p><strong>Die Bilderrechte liegen bei:</strong> Design by S4MARON</p>
+
+        <h1>Datenschutzerklärung</h1>
+        <h2>Einleitung und Überblick</h2>
+        <p>
+            Wir nehmen den Schutz Ihrer persönlichen Daten sehr ernst und behandeln Ihre personenbezogenen Daten
+            vertraulich und entsprechend
+            der gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung.
+        </p>
+
+        <h2>Anwendungsbereich</h2>
+        <p>
+            Diese Datenschutzerklärung gilt für alle von uns im Unternehmen verarbeiteten personenbezogenen Daten
+            sowie für die Daten, die von
+            uns beauftragte Firmen (Auftragsverarbeiter) verarbeiten. Dazu gehören Daten wie Name, E-Mail-Adresse
+            und postalische Anschrift.
+        </p>
+
+        <h2>Rechtsgrundlagen</h2>
+        <p>
+            Wir verarbeiten Ihre Daten auf Grundlage der Datenschutz-Grundverordnung (DSGVO). Wir verarbeiten Ihre
+            Daten nur, wenn mindestens
+            eine der folgenden Bedingungen zutrifft:
+        </p>
+        <ul>
+            <li><strong>Einwilligung:</strong> Sie haben uns Ihre Einwilligung gegeben, Daten zu einem bestimmten
+                Zweck zu verarbeiten.
+            </li>
+            <li><strong>Vertrag:</strong> Wir verarbeiten Ihre Daten, um einen Vertrag oder vorvertragliche
+                Verpflichtungen zu erfüllen.
+            </li>
+            <li><strong>Rechtliche Verpflichtung:</strong> Wir verarbeiten Ihre Daten, wenn wir gesetzlich dazu
+                verpflichtet sind.
+            </li>
+            <li><strong>Berechtigte Interessen:</strong> Wir verarbeiten Ihre Daten, wenn ein berechtigtes Interesse
+                unsererseits besteht und Ihre Grundrechte nicht beeinträchtigt werden.
+            </li>
+        </ul>
+
+        <h2>Kontaktdaten des Verantwortlichen</h2>
+        <p>
+            Sollten Sie Fragen zum Datenschutz haben, wenden Sie sich bitte an:
+        </p>
+        <p>Samuel Kaviedes</p>
+        <p>E-Mail: <a href="mailto:contact@smallstreamawards.de">contact@smallstreamawards.de</a></p>
+
+        <h2>Speicherdauer</h2>
+        <p>
+            Ihre personenbezogenen Daten werden nur so lange gespeichert, wie dies für die Erfüllung der genannten
+            Zwecke erforderlich ist
+            oder wie es die gesetzlichen Aufbewahrungsfristen vorsehen.
+        </p>
+
+        <h2>Rechte laut DSGVO</h2>
+        <p>
+            Ihnen stehen laut DSGVO verschiedene Rechte zu, darunter das Recht auf Auskunft, Berichtigung, Löschung
+            und Widerspruch gegen die
+            Verarbeitung Ihrer Daten. Wenden Sie sich bei Bedarf an die oben genannten Kontaktdaten.
+        </p>
+    </div>
+</div>
+
+<!-- /.javascript files -->
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/custom.js"></script>
+<script src="js/jquery.sticky.js"></script>
+<script src="js/wow.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/ekko-lightbox-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G8REJXR93X"></script>
+
+<script type="text/javascript">
+    // jQuery DOM Ready
+    $(document).ready(function () {
+        // Initialize WOW.js
+        new WOW().init();
+// Open the login popup when clicking the login button
+        document.getElementById('openLoginPopup').addEventListener('click', function () {
+            document.getElementById('loginPopup').style.display = 'block';
+        });
+
+// Close the login popup when clicking on the close button
+        document.getElementById('closeLogin').addEventListener('click', function () {
+            document.getElementById('loginPopup').style.display = 'none';
+        });
+
+// Close the popup when clicking outside the content
+        window.addEventListener('click', function (event) {
+            const modal = document.getElementById('loginPopup');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        });
+
+        // Lightbox functionality
+        $(document).on('click', '*[data-toggle="lightbox"]', function (event) {
+            event.preventDefault();
+            $(this).ekkoLightbox();
+        });
+
+        // Handle Impressum opening and closing
+        $('#openImpressum').on('click', function () {
+            $('#impressumContainer').fadeIn(); // Smooth opening
+        });
+
+        $('#closeImpressum').on('click', function () {
+            console.log("Schließen-Button wurde geklickt"); // Debugging log
+            $('#impressumContainer').fadeOut(); // Smooth closing
+        });
+
+        // Close Impressum when clicking outside the container
+        $(window).on('click', function (event) {
+            if ($(event.target).is('#impressumContainer')) {
+                $('#impressumContainer').fadeOut();
+            }
+        });
+
+        // Twitch login button functionality
+        $('#twitchLoginBtn').on('click', function () {
+            console.log("Benutzer zu Twitch weitergeleitet");
+            // Add additional functionality here if needed
+        });
+
+     
+
+        // Countdown Timer
+        const countdownDate = new Date("Oct 14, 2024 20:00:00").getTime();
+        const countdownFunction = setInterval(function () {
+            const now = new Date().getTime();
+            const timeLeft = countdownDate - now;
+
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+            $('#days').text(days);
+            $('#hours').text(hours);
+            $('#minutes').text(minutes);
+            $('#seconds').text(seconds);
+
+            if (timeLeft < 0) {
+                clearInterval(countdownFunction);
+                $('#timer').text("Es geht in wenigen Momenten weiter");
+            }
+        }, 1000);
+
+        // Function to start confetti from a specific element
+        function startConfettiFromElement($element) {
+            const rect = $element[0].getBoundingClientRect(); // Get position of the element
+
+            const x = (rect.left + rect.width / 2) / window.innerWidth;  // X-Position relative to viewport
+            const y = (rect.top + rect.height / 2) / window.innerHeight; // Y-Position relative to viewport
+
+            // Start confetti from this position
+            confetti({
+                particleCount: 10,
+                spread: 30,
+                startVelocity: 20,
+                gravity: 1,
+                origin: {x: x, y: y},
+                colors: ['#FFD700'],
+                shapes: ['square']
+            });
+        }
+
+        // Confetti on mouseover on the element with ID 'confetti-trigger'
+        $('#confetti-trigger').on('mouseover', function () {
+            startConfettiFromElement($(this));
+        });
+
+        // Confetti on click on the element with ID 'confetti-trigger'
+        $('#confetti-trigger').on('click', function () {
+            confetti({
+                particleCount: 100,
+                spread: 70,
+                origin: {y: 0.6}
+            });
+        });
+    });
+
+    // Google Tag (gtag.js)
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'G-G8REJXR93X');
+</script>
+
+</body>
+
+</html>
