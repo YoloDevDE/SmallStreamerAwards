@@ -29,7 +29,6 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Alegreya+Sans:100,300,400,700' rel='stylesheet' type='text/css'>
 
-
     <!-- Font Awesome -->
 
     <style>
@@ -205,10 +204,16 @@
                         <img alt="Trophy" id="trophy-image" src="images/lock.png" style="display: none;">
                     </li>
                     <li>
-                        <!-- Login button styled as requested -->
-                        <a class="login-btn" id="openLoginPopup">
+                        <!-- Login button -->
+                        <a class="login-btn" id="openLoginPopup" style="display:none;">
                             Login
                         </a>
+
+                        <!-- User info (hidden by default) -->
+                        <div id="user-info" style="display:none;">
+                            <p>Welcome, <span id="username"></span>!</p>
+                            <a class="logout-btn" href="/logout">Logout</a>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -382,7 +387,6 @@
         </div>
     </div>
 </section>
-
 <div id="feature">
     <div id="team-section">
         <div class="container">
@@ -436,7 +440,7 @@
                             <img alt="Member 1"
                                  src="https://static-cdn.jtvnw.net/jtv_user_pictures/fd4c1487-3090-4ac5-8e86-51b3338386bb-profile_image-70x70.png">
                         </a>
-                        <h4>Imaggeee</h4>
+                        <h4>IMaggeee</h4>
 
                     </div>
                     <div class="team-member">
@@ -449,11 +453,115 @@
 
                     </div>
                     <div class="team-member">
-                        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+                        <a href="https://www.twitch.tv/xneyco">
 
-                            <img alt="Member 1" src="images/no.png">
+                            <img alt="Member 1" src="https://static-cdn.jtvnw.net/jtv_user_pictures/f934a69e-c553-4986-9dbd-343fa7ba23f7-profile_image-70x70.png">
                         </a>
-                        <h4>Trolololololol</h4>
+                        <h4>xNeyco</h4>
+
+                    </div>
+                    <div class="team-member">
+                        <a href="https://www.twitch.tv/degamore">
+
+                            <img alt="Member 1" src="https://static-cdn.jtvnw.net/jtv_user_pictures/c930b4a4-ec78-4235-8ba2-cdad3151668a-profile_image-70x70.png">
+                        </a>
+                        <h4>degamore</h4>
+
+                    </div>
+                    <div class="team-member">
+                        <div class="team-status Founder">
+                            <p>Founder</p>
+                        </div>
+                        <a href="https://www.twitch.tv/frittiertboy">
+
+                            <img alt="Member 1"
+                                 src="https://static-cdn.jtvnw.net/jtv_user_pictures/9079c28c-923a-41f4-a274-b54278879bff-profile_image-70x70.png">
+                        </a>
+                        <h4>Fritiertboy</h4>
+
+                    </div>
+                    <div class="team-member">
+                        <a href="https://www.twitch.tv/nimmbaa">
+
+                            <img alt="Member 1" src="https://static-cdn.jtvnw.net/jtv_user_pictures/67c74b92-f1db-4d3b-8ad4-995587aa05cc-profile_image-70x70.png">
+                        </a>
+                        <h4>nimmba</h4>
+
+                    </div>
+                    <div class="team-member">
+                        <a href="https://www.twitch.tv/lordpisswasser">
+
+                            <img alt="Member 1" src="https://static-cdn.jtvnw.net/jtv_user_pictures/c57edf4f-7413-4906-8de8-57944b9b6e28-profile_image-70x70.png">
+                        </a>
+                        <h4>Lordpisswasser</h4>
+
+                    </div>
+                    <div class="team-member">
+                        <a href="https://www.twitch.tv/kingofgtom">
+
+                            <img alt="Member 1" src="https://static-cdn.jtvnw.net/jtv_user_pictures/74da7608-d9b0-466f-916b-346e61b3ff2a-profile_image-70x70.png">
+                        </a>
+                        <h4>KingOfGtoM</h4>
+
+                    </div>
+                    <div class="team-member">
+                        <a href="https://www.twitch.tv/invormativ">
+
+                            <img alt="Member 1" src="https://static-cdn.jtvnw.net/jtv_user_pictures/95e822d3-2ecc-46c0-9639-323fabf0cf1d-profile_image-70x70.png">
+                        </a>
+                        <h4>invormativ</h4>
+
+                    </div>
+                    <div class="team-member">
+                        <div class="team-status Founder">
+                            <p>Founder</p>
+                        </div>
+                        <a href="https://www.twitch.tv/S4MARON">
+
+                            <img alt="Member 1"
+                                 src="https://cdn.7tv.app/user/6228d601c1125225d1887f1f/av_670441670212155ee9e5b24e/2x.webp">
+                        </a>
+                        <h4>S4MARON</h4>
+
+                    </div>
+                    <div class="team-member">
+                        <a href="https://www.twitch.tv/zflockii">
+
+                            <img alt="Member 1" src="https://static-cdn.jtvnw.net/jtv_user_pictures/60953baf-7684-43b6-9dce-d07f538e9661-profile_image-70x70.png">
+                        </a>
+                        <h4>zflockii</h4>
+
+                    </div>
+                    <!-- <div class="team-member">
+                        <a href="https://www.twitch.tv/einfachdings">
+
+                            <img src="https://static-cdn.jtvnw.net/jtv_user_pictures/13be68fd-faa7-49a1-b51d-9a53125837f1-profile_image-70x70.png" alt="Member 1">
+                        </a>
+                        <h4>einfachdings</h4>
+
+                    </div> -->
+                    <div class="team-member">
+                        <a href="https://www.twitch.tv/marcelements">
+
+                            <img alt="Member 1" src="https://static-cdn.jtvnw.net/jtv_user_pictures/d73bbe25-866e-4dca-93db-9404d01349e9-profile_image-70x70.png">
+                        </a>
+                        <h4>marcelements</h4>
+
+                    </div>
+                    <div class="team-member">
+                        <a href="https://www.twitch.tv/jamienichtjames">
+
+                            <img alt="Member 1" src="https://static-cdn.jtvnw.net/jtv_user_pictures/6237449e-66a8-4a2c-b0f6-0c76dedb7d28-profile_image-70x70.png">
+                        </a>
+                        <h4>jamienichtjames</h4>
+
+                    </div>
+                    <div class="team-member">
+                        <a href="https://www.twitch.tv/wettermann_">
+
+                            <img alt="Member 1" src="https://static-cdn.jtvnw.net/jtv_user_pictures/3985da08-d592-4669-9879-ad5f110631a6-profile_image-70x70.png">
+                        </a>
+                        <h4>Wettermann_</h4>
 
                     </div>
 
@@ -470,7 +578,11 @@
             </div>
             <div class="row row-team">
                 <div class="team-container">
+
                     <div class="team-member">
+                        <div class="team-status Founder">
+                            <p>Founder</p>
+                        </div>
                         <a href="https://www.twitch.tv/frittiertboy">
 
                             <img alt="Member 1"
@@ -480,6 +592,9 @@
 
                     </div>
                     <div class="team-member">
+                        <div class="team-status Founder">
+                            <p>Founder</p>
+                        </div>
                         <a href="https://www.twitch.tv/S4MARON">
 
                             <img alt="Member 1"
@@ -489,14 +604,20 @@
 
                     </div>
                     <div class="team-member">
+                        <div class="team-status">
+                            <p>SEO</p>
+                        </div>
                         <a href="">
 
-                            <img alt="Member 1" src="images/no.png">
+                            <img alt="Member 1" src="https://static-cdn.jtvnw.net/jtv_user_pictures/a5e46b9e-9c16-44cc-8af6-d14aa6889402-profile_image-70x70.png">
                         </a>
                         <h4>Cpt. Kontrollauge</h4>
 
                     </div>
                     <div class="team-member">
+                        <div class="team-status">
+                            <p>Network</p>
+                        </div>
                         <a href="">
 
                             <img alt="Member 1" src="images/no.png">
@@ -505,12 +626,39 @@
 
                     </div>
                     <div class="team-member">
+                        <div class="team-status">
+                            <p>Network</p>
+                        </div>
                         <a href="">
 
                             <img alt="Member 1"
                                  src="https://static-cdn.jtvnw.net/jtv_user_pictures/f45e03ed-e548-4da7-b602-1f965d8e62f9-profile_image-70x70.png">
                         </a>
                         <h4>TheRealJackson</h4>
+
+                    </div>
+                    <!-- <div class="team-member">
+                        <div class="team-status">
+                            <p>Network</p>
+                        </div>
+                        <a href="https://www.twitch.tv/s4_froschoderso">
+
+                            <img src="https://static-cdn.jtvnw.net/jtv_user_pictures/2a0f1e53-2f64-4817-a1bd-e3129144ead4-profile_image-70x70.png"
+                                alt="Member 1">
+                        </a>
+                        <h4>Frosch</h4>
+
+                    </div> -->
+                    <div class="team-member">
+                        <div class="team-status">
+                            <p>Developer</p>
+                        </div>
+                        <a href="">
+
+                            <img alt="Member 1"
+                                 src="https://static-cdn.jtvnw.net/jtv_user_pictures/3b5d2a34-6960-425f-b7ba-bc9d4f7b6b98-profile_image-70x70.png">
+                        </a>
+                        <h4>Timo</h4>
 
                     </div>
 
@@ -520,7 +668,6 @@
     </div>
 
 </div>
-
 
 <!-- /.footer -->
 <footer id="footer">
@@ -542,34 +689,35 @@
         <h1>Login or Register</h1>
 
         <!-- Login form -->
-<!--        <form id="loginForm">-->
-<!--            <div class="form-group">-->
-<!--                <label for="username">Username or Email:</label>-->
-<!--                <input class="form-control" id="username" placeholder="Enter your username or email" required type="text">-->
-<!--            </div>-->
+        <!--        <form id="loginForm">-->
+        <!--            <div class="form-group">-->
+        <!--                <label for="username">Username or Email:</label>-->
+        <!--                <input class="form-control" id="username" placeholder="Enter your username or email" required type="text">-->
+        <!--            </div>-->
 
-<!--            <div class="form-group">-->
-<!--                <label for="password">Password:</label>-->
-<!--                <input class="form-control" id="password" placeholder="Enter your password" required type="password">-->
-<!--            </div>-->
+        <!--            <div class="form-group">-->
+        <!--                <label for="password">Password:</label>-->
+        <!--                <input class="form-control" id="password" placeholder="Enter your password" required type="password">-->
+        <!--            </div>-->
 
-<!--            <button class="submit-btn" type="submit">Login</button>-->
-<!--        </form>-->
+        <!--            <button class="submit-btn" type="submit">Login</button>-->
+        <!--        </form>-->
 
         <hr>
 
         <!-- OAuth options -->
         <p>login with:</p>
         <div class="oauth-buttons">
-            <a class="oauth-btn twitch-login-btn" href="https://id.twitch.tv/oauth2/authorize?client_id=zzds8ws0st10vxfa3568snakvm31m1&redirect_uri=https://smallstreamawards.de&response_type=code&scope=user:read:email">
-                <img alt="Twitch Icon" class="oauth-icon" src="images/Twitch.svg" width="16" height="16">
+            <a class="oauth-btn twitch-login-btn" href="/auth/twitch">
+                <img alt="Twitch Icon" class="oauth-icon" height="16" src="images/Twitch.svg" width="16">
                 Login with Twitch
             </a>
 
-<!--            <a class="oauth-btn discord-login-btn" href="https://discord.com/api/oauth2/authorize?client_id=YOUR_DISCORD_CLIENT_ID&redirect_uri=https://smallstreamawards.de&response_type=code&scope=identify email">-->
-<!--                <img alt="Discord Icon" class="oauth-icon" src="https://upload.wikimedia.org/wikipedia/commons/9/98/Discord_logo.svg">-->
-<!--                Login with Discord-->
-<!--            </a>-->
+
+            <!--            <a class="oauth-btn discord-login-btn" href="https://discord.com/api/oauth2/authorize?client_id=YOUR_DISCORD_CLIENT_ID&redirect_uri=https://smallstreamawards.de&response_type=code&scope=identify email">-->
+            <!--                <img alt="Discord Icon" class="oauth-icon" src="https://upload.wikimedia.org/wikipedia/commons/9/98/Discord_logo.svg">-->
+            <!--                Login with Discord-->
+            <!--            </a>-->
         </div>
     </div>
 </div>
@@ -674,22 +822,52 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-G8REJXR93X"></script>
 
 <script type="text/javascript">
-
     // jQuery DOM Ready
     $(document).ready(function () {
         // Initialize WOW.js
         new WOW().init();
-// Open the login popup when clicking the login button
+
+        // Function to check if user is logged in
+        function checkLoginStatus() {
+            $.ajax({
+                url: '/api/user', // Fetch user data from backend
+                method: 'GET',
+                success: function (data) {
+                    const $userInfo = $('#user-info');
+                    const $loginButton = $('#openLoginPopup');
+                    const $usernameElement = $('#username');
+
+                    if (data.user) {
+                        // User is logged in, display user info
+                        $userInfo.show();
+                        $loginButton.hide();
+                        $usernameElement.text(data.user.username);
+                    } else {
+                        // User is not logged in, show login button
+                        $userInfo.hide();
+                        $loginButton.show();
+                    }
+                },
+                error: function () {
+                    console.error('Error fetching user data');
+                }
+            });
+        }
+
+        // Call the checkLoginStatus function when the page loads
+        checkLoginStatus();
+
+        // Open the login popup when clicking the login button
         document.getElementById('openLoginPopup').addEventListener('click', function () {
             document.getElementById('loginPopup').style.display = 'block';
         });
 
-// Close the login popup when clicking on the close button
+        // Close the login popup when clicking on the close button
         document.getElementById('closeLogin').addEventListener('click', function () {
             document.getElementById('loginPopup').style.display = 'none';
         });
 
-// Close the popup when clicking outside the content
+        // Close the popup when clicking outside the content
         window.addEventListener('click', function (event) {
             const modal = document.getElementById('loginPopup');
             if (event.target === modal) {
@@ -709,7 +887,6 @@
         });
 
         $('#closeImpressum').on('click', function () {
-            console.log("Schließen-Button wurde geklickt"); // Debugging log
             $('#impressumContainer').fadeOut(); // Smooth closing
         });
 
@@ -719,13 +896,6 @@
                 $('#impressumContainer').fadeOut();
             }
         });
-
-        // Twitch login button functionality
-        $('#twitchLoginBtn').on('click', function () {
-            console.log("Benutzer zu Twitch weitergeleitet");
-            // Add additional functionality here if needed
-        });
-
 
         // Countdown Timer
         const countdownDate = new Date("Oct 14, 2024 20:00:00").getTime();
@@ -762,12 +932,11 @@
                 spread: 30,
                 startVelocity: 20,
                 gravity: 1,
-                origin: {x: x, y: y},
+                origin: { x: x, y: y },
                 colors: ['#FFD700'],
                 shapes: ['square']
             });
         }
-
 
         // Confetti on mouseover on the element with ID 'confetti-trigger'
         $('#confetti-trigger').on('mouseover', function () {
@@ -779,7 +948,7 @@
             confetti({
                 particleCount: 100,
                 spread: 70,
-                origin: {y: 0.6}
+                origin: { y: 0.6 }
             });
         });
     });
@@ -794,6 +963,7 @@
     gtag('js', new Date());
     gtag('config', 'G-G8REJXR93X');
 </script>
+
 
 </body>
 
